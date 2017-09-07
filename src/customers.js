@@ -1,6 +1,14 @@
 import axios from 'axios';
-import apiRUL from './api';
+import apiURL from './api';
 
-export function getCustomerList() {
-    axios.get(apiURL).then(response => response.data);
-}
+export const getCustomerList = function() {
+    return axios.get(apiURL).then(response => {
+      return response.data;
+    })
+  }
+  
+  export const postCustomer = function(customer) {
+    return axios.post(apiURL, customer).then(response => {
+      return response.data;
+    })
+  }
